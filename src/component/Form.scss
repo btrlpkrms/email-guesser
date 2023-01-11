@@ -1,0 +1,47 @@
+.form-container{
+  width: 50%;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  label{
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+  input{
+    font-size: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    width: 48%;
+    box-sizing: border-box;
+    margin-right: 1%;
+
+    &:focus{
+      border-color: #333;
+      outline: none;
+    }
+  }
+  button[type="submit"]{
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1em;
+
+    &:hover{
+      background-color: #3e8e41;
+    }
+    &:disabled{
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
