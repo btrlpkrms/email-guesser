@@ -1,4 +1,4 @@
-.form-container{
+.form-container {
   width: 50%;
   margin: 0 auto;
   padding: 1em;
@@ -7,13 +7,14 @@
   align-items: center;
   justify-content: center;
 
-  label{
+  label {
     font-size: 1.2em;
     width: 100%;
     margin-bottom: 0.5em;
     text-align: center;
   }
-  input{
+
+  input {
     font-size: 1em;
     padding: 0.5em;
     border: 1px solid #ccc;
@@ -21,25 +22,27 @@
     box-sizing: border-box;
     margin-right: 1%;
 
-    &:focus{
+    &:focus {
       border-color: #333;
       outline: none;
     }
   }
-  button[type="submit"]{
+
+  button[type="submit"] {
     font-size: 1.2em;
     background-color: #4CAF50;
     color: white;
     padding: 0.5em 1em;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
     margin-top: 1em;
 
-    &:hover{
+    &:hover {
       background-color: #3e8e41;
     }
-    &:disabled{
+
+    &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }

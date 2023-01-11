@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import "./Form.scss";
 
 interface FormProps {
     onSubmit: (event: { fullName: string; companyDomain: string }) => void;
 }
 
-export const Form = (props : FormProps) => {
-    const [formData, setFormData] = useState({ fullName: '', companyDomain: '' });
+export const Form = (props: FormProps) => {
+    const [formData, setFormData] = useState({fullName: '', companyDomain: ''});
+    const [formValid, setFormValid] = useState<boolean>(false);
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -14,8 +15,17 @@ export const Form = (props : FormProps) => {
     };
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+        const {name, value} = event.target;
+        if (/^[A-Za-z ]+$/.test(value) || value === "") {
+            setFormData((prev) => ({...prev, [name]: value}));
+        } else {
+            alert("only english alphabetical characters allowed");
+        }
+        if (formData.fullName !== "" && formData.companyDomain !== "") {
+            setFormValid(true);
+        } else {
+            setFormValid(false);
+        }
     };
 
     return (
@@ -38,7 +48,7 @@ export const Form = (props : FormProps) => {
                     onChange={handleInputChange}
                 />
             </label>
-            <button type="submit">Guess Email</button>
+            <button type="submit" disabled={!formValid}>Guess Email</button>
         </form>
     );
 };

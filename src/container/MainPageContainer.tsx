@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import {Form} from "../component/Form";
 import {Result} from "../component/Result";
@@ -23,11 +23,11 @@ export const MainPageContainer = () => {
         setLoading(true);
         setError(null);
         try {
-            const res = await axios.get<EmailResponse>("", {
+            const res = await axios.get<EmailResponse>("http://localhost:3001/guess-email", {
                 params: formData
             });
             setEmail(res.data.email);
-        } catch (err : any) {
+        } catch (err: any) {
             setError(err.message);
         } finally {
             setLoading(false);
@@ -37,9 +37,9 @@ export const MainPageContainer = () => {
     return (
         <div className={"main-page"}>
             <h1>Email Guesser</h1>
-            <Form onSubmit={handleFormSubmit} />
-            <Loading isLoading={loading} />
-            <Result email={email} error={error} isLoading={loading} />
+            <Form onSubmit={handleFormSubmit}/>
+            <Loading isLoading={loading}/>
+            <Result email={email} error={error} isLoading={loading}/>
         </div>
     );
 };

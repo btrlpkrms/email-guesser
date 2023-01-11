@@ -5,6 +5,6 @@ interface LoadingProps {
     isLoading: boolean;
 }
 
-export const Loading= ( props : LoadingProps ) => {
+export const Loading = (props: LoadingProps) => {
     return (props.isLoading ? <p className={"loading"}>Loading...</p> : null);
 };

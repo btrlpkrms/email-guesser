@@ -7,7 +7,7 @@ interface ResultsProps {
     isLoading: boolean;
 }
 
-export const Result= ( props : ResultsProps ) => {
+export const Result = (props: ResultsProps) => {
     return (
         <>
             {props.error && <p className={"error"}>Error: {props.error}</p>}

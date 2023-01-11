@@ -4,12 +4,12 @@ import reportWebVitals from './reportWebVitals';
 import {MainPageContainer} from "./container/MainPageContainer";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-      <MainPageContainer></MainPageContainer>
-  </React.StrictMode>
+    <React.StrictMode>
+        <MainPageContainer/>
+    </React.StrictMode>
 );
 
 reportWebVitals();
