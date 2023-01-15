@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import {MainPageContainer} from "./container/MainPageContainer";
+import {MainPageContainer} from "./container/MainPage/MainPageContainer";
+import {ErrorBoundaries} from "./components/ErrorBoundaries";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
-    <React.StrictMode>
+    <ErrorBoundaries>
         <MainPageContainer/>
-    </React.StrictMode>
+    </ErrorBoundaries>
 );
 
-reportWebVitals();

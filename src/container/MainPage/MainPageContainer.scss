@@ -1,4 +1,7 @@
 .main-page {
+  display: flex;
+  flex-direction: column;
+
   h1 {
     color: #333;
     text-align: center;

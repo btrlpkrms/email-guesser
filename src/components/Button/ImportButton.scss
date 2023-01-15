@@ -1,0 +1,32 @@
+.import-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 15px;
+
+  input, button {
+    width: 180px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    margin-right: 10px;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:hover {
+      background-color: #78d57c;
+    }
+  }
+
+  .submit-button {
+    display: flex;
+    flex-direction: row;
+  }
+
+}
