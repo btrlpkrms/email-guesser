@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+# Email Guesser
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Single Page Application (SPA) that allows users to input a full name and company domain, and display the derived email address. The SPA is built with React and the backend service is built with Express.js.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Form component that accepts the full name and company domain
+- ImportButton component that when clicked, sends a request to the backend service to derive the email address
+- Result component that displays the derived email address
+- Loading component that is displayed while the request is being processed
 
-### `npm start`
+## Get Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone this repository by running git clone https://github.com/bkaramus/email-guesser.git
+2. Install the dependencies by running npm install in the root folder
+3. Start the development server by running npm start
+4. Open http://localhost:3000 to view the application in the browser
+5. Install the dependencies by running npm install in the backend folder
+6. Start the backend server by running npm start
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Running the tests
 
-### `npm test`
+To run the tests, run npm test in the root folder.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deployment
 
-### `npm run build`
+To deploy the application, run npm run build to create a production-ready build of the application. Then, follow the steps for deploying a React application to a hosting service of your choice.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built With
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React - The web framework used for the frontend
+- Express.js - The web framework used for the backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Authors
+- Baturalp Karamus
 
-### `npm run eject`
+##Additional Notes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- The sample data set used for email address derivation is in a static JSON file, the format of email addresses is either first_name_last_name or first_name_initial_last_name.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Sample Data:
+```json
+{
+"Jane Doe": "jdoe@babbel.com",
+"Jay Arun": "jayarun@linkedin.com",
+"David Stein": "davidstein@google.com",
+"Mat Lee": "matlee@google.com",
+"Marta Dahl": "mdahl@babbel.com",
+"Vanessa Boom": "vboom@babbel.com"
+}
+```
+## Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img width="200" height="200" alt="Screenshot 2023-01-15 at 15 28 36" src="https://user-images.githubusercontent.com/29132727/212564921-732cfd1c-30fb-4fb5-b5c5-8d6e74d75932.png">
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
