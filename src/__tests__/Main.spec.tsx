@@ -17,23 +17,19 @@ describe('MainPageContainer', () => {
         render(<MainPageContainer/>);
         const fullNameInput = screen.getByTestId('fullName');
         const companyDomainInput = screen.getByTestId('companyDomain');
-        const serviceProviderInput = screen.getByTestId('serviceProvider');
 
         expect(fullNameInput.textContent).toBe('Full Name:');
         expect(companyDomainInput.textContent).toBe('Company:');
-        expect(serviceProviderInput.textContent).toBe('Region Shortcut:');
     });
 
     it('should show loading spinner when form is submitted', async () => {
         render(<MainPageContainer/>);
         const fullNameInput = screen.getByTestId('fullName-input');
         const companyDomainInput = screen.getByTestId('companyDomain-input');
-        const serviceProviderInput = screen.getByTestId('serviceProvider-input');
         const submitButton = screen.getByTestId('submit-button');
 
         fireEvent.change(fullNameInput, {target: {value: 'John Doe'}});
         fireEvent.change(companyDomainInput, {target: {value: 'Babbel'}});
-        fireEvent.change(serviceProviderInput, {target: {value: 'de'}});
         fireEvent.submit(submitButton);
 
         expect(screen.getByTestId('loading-spinner')).toBeTruthy();
@@ -43,19 +39,17 @@ describe('MainPageContainer', () => {
         render(<MainPageContainer/>);
         const fullNameInput = await screen.findByTestId('fullName-input');
         const companyDomainInput = await screen.findByTestId('companyDomain-input');
-        const serviceProviderInput = await screen.findByTestId('serviceProvider-input');
         const submitButton = await screen.findByTestId('submit-button');
 
         (axios.get as jest.Mock).mockResolvedValue({
-            data: {email: 'jdoe@babbel.com.de'},
+            data: {email: 'jdoe@babbel.com'},
         });
         fireEvent.change(fullNameInput, {target: {value: 'John Doe'}});
         fireEvent.change(companyDomainInput, {target: {value: 'Babbel'}});
-        fireEvent.change(serviceProviderInput, {target: {value: 'de'}});
         fireEvent.submit(submitButton);
 
         await waitFor(() => {
-            expect(screen.getByTestId('email-result')).toHaveTextContent('Guessed Email: jdoe@babbel.com.de');
+            expect(screen.getByTestId('email-result')).toHaveTextContent('Guessed Email: jdoe@babbel.com');
         });
     });
 
@@ -64,14 +58,12 @@ describe('MainPageContainer', () => {
 
         const fullNameInput = screen.getByTestId('fullName-input');
         const companyDomainInput = screen.getByTestId('companyDomain-input');
-        const serviceProviderInput = screen.getByTestId('serviceProvider-input');
         const submitButton = screen.getByTestId('submit-button');
 
         (axios.get as jest.Mock).mockRejectedValue(new Error('Error message'));
 
         fireEvent.change(fullNameInput, {target: {value: 'John Doe'}});
         fireEvent.change(companyDomainInput, {target: {value: 'Babbel'}});
-        fireEvent.change(serviceProviderInput, {target: {value: 'de'}});
         fireEvent.submit(submitButton);
 
 
