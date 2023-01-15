@@ -11,7 +11,7 @@ A Single Page Application (SPA) that allows users to input a full name and compa
 
 ## Get Started
 
-1. Clone this repository by running git clone https://github.com/bkaramus/email-guesser.git
+1. Clone this repository by running git clone https://github.com/btrlpkrms/email-guesser.git
 2. Install the dependencies by running npm install in the root folder
 3. Start the development server by running npm start
 4. Open http://localhost:3000 to view the application in the browser
