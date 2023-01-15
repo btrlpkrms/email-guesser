@@ -15,6 +15,8 @@ A Single Page Application (SPA) that allows users to input a full name and compa
 2. Install the dependencies by running npm install in the root folder
 3. Start the development server by running npm start
 4. Open http://localhost:3000 to view the application in the browser
+5. Install the dependencies by running npm install in the backend folder
+6. Start the backend server by running npm start
 
 ## Running the tests
 
